@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>RD Public School — Tekari, Gaya, Bihar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --navy:#12275E;
+  --navy-deep:#0C1C46;
+  --maroon:#8C1C13;
+  --gold:#C9991A;
+  --gold-light:#F0C84A;
+  --cream:#FDF8F2;
+  --warm-white:#FFFDF9;
+  --text:#1A1A2E;
+  --text-muted:#5A5A72;
+  --border:#E8E0D0;
+  --serif:'Playfair Display',serif;
+  --sans:'DM Sans',sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--warm-white);line-height:1.6;overflow-x:hidden}
+
+/* ── TOP BAR ── */
+.topbar{background:var(--navy-deep);color:#fff;font-size:12.5px;padding:7px 0}
+.topbar-inner{max-width:1200px;margin:auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.topbar a{color:rgba(255,255,255,0.82);text-decoration:none;display:flex;align-items:center;gap:5px;transition:color .2s}
+.topbar a:hover{color:#fff}
+.topbar-left{display:flex;gap:20px;align-items:center}
+.topbar-right{display:flex;gap:12px;align-items:center}
+.topbar-cta{background:var(--gold);color:#000!important;padding:4px 14px;border-radius:20px;font-weight:600;font-size:12px;transition:background .2s!important}
+.topbar-cta:hover{background:var(--gold-light)!important}
+.topbar svg{width:13px;height:13px}
+
+/* ── NAVBAR ── */
+nav{background:#fff;position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border);box-shadow:0 2px 16px rgba(18,39,94,0.06)}
+.nav-inner{max-width:1200px;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-badge{width:46px;height:46px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-badge span{color:#fff;font-family:var(--serif);font-size:17px;font-weight:700;letter-spacing:-0.5px}
+.logo-text{line-height:1.2}
+.logo-text strong{display:block;font-family:var(--serif);color:var(--navy);font-size:15px;font-weight:700}
+.logo-text small{display:block;color:var(--text-muted);font-size:11.5px;letter-spacing:0.3px}
+.nav-links{display:flex;gap:6px;list-style:none;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--text-muted);text-decoration:none;padding:6px 12px;border-radius:6px;transition:all .2s}
+.nav-links a:hover{color:var(--navy);background:rgba(18,39,94,0.06)}
+.nav-links .active{color:var(--navy);font-weight:600}
+.nav-btn{background:var(--maroon);color:#fff!important;padding:8px 18px!important;border-radius:8px!important;font-weight:600!important;font-size:13px!important}
+.nav-btn:hover{background:#a82418!important;color:#fff!important}
+
+/* ── HERO ── */
+.hero{min-height:88vh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--navy-deep)}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0C1C46 0%,#1B3270 40%,#0e2258 100%)}
+.hero-pattern{position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(255,255,255,1) 40px,rgba(255,255,255,1) 41px),repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(255,255,255,1) 40px,rgba(255,255,255,1) 41px)}
+.hero-accent{position:absolute;right:-80px;top:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(201,153,26,0.12) 0%,transparent 70%);pointer-events:none}
+.hero-accent2{position:absolute;left:-60px;bottom:-60px;width:400px;height:400px;background:radial-gradient(circle,rgba(140,28,19,0.15) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1200px;margin:auto;padding:80px 24px;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,153,26,0.15);border:1px solid rgba(201,153,26,0.3);color:var(--gold-light);padding:6px 14px;border-radius:20px;font-size:12.5px;font-weight:500;letter-spacing:0.5px;margin-bottom:20px}
+.hero-badge span{width:6px;height:6px;background:var(--gold-light);border-radius:50%;display:inline-block}
+.hero h1{font-family:var(--serif);font-size:clamp(36px,4.5vw,58px);line-height:1.15;color:#fff;font-weight:700;margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--gold-light)}
+.hero-sub{color:rgba(255,255,255,0.7);font-size:16px;max-width:480px;margin-bottom:32px;font-weight:300;line-height:1.7}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:#0C1C46;padding:13px 28px;border-radius:8px;font-weight:700;font-size:14.5px;text-decoration:none;display:inline-block;transition:all .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 6px 20px rgba(201,153,26,0.35)}
+.btn-ghost{background:transparent;color:#fff;padding:13px 28px;border-radius:8px;font-weight:500;font-size:14.5px;text-decoration:none;display:inline-block;transition:all .2s;border:1.5px solid rgba(255,255,255,0.3)}
+.btn-ghost:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.6)}
+.hero-card{background:rgba(255,255,255,0.05);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.hero-stat{padding:20px;text-align:center;border-right:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08)}
+.hero-stat:nth-child(2){border-right:none}
+.hero-stat:nth-child(3){border-bottom:none}
+.hero-stat:nth-child(4){border-right:none;border-bottom:none}
+.hero-stat-num{font-family:var(--serif);font-size:36px;color:#fff;font-weight:700;line-height:1}
+.hero-stat-num span{color:var(--gold-light);font-size:20px}
+.hero-stat-label{color:rgba(255,255,255,0.55);font-size:12px;margin-top:5px;letter-spacing:0.4px;text-transform:uppercase}
+.cbse-badge{margin-top:24px;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.75);padding:8px 16px;border-radius:8px;font-size:12.5px}
+.cbse-badge svg{width:16px;height:16px;color:var(--gold-light)}
+
+/* ── SECTIONS SHARED ── */
+section{padding:80px 0}
+.section-inner{max-width:1200px;margin:auto;padding:0 24px}
+.section-label{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--maroon);margin-bottom:10px}
+.section-title{font-family:var(--serif);font-size:clamp(28px,3.5vw,40px);color:var(--navy);font-weight:700;line-height:1.25}
+.section-title em{font-style:normal;color:var(--maroon)}
+.section-sub{color:var(--text-muted);max-width:520px;margin-top:12px;font-size:15.5px;line-height:1.7}
+.section-header{margin-bottom:48px}
+.section-header.center{text-align:center}
+.section-header.center .section-sub{margin:12px auto 0}
+.divider{width:48px;height:3px;background:linear-gradient(90deg,var(--maroon),var(--gold));border-radius:2px;margin-top:14px}
+.divider.center{margin:14px auto 0}
+
+/* ── WHY US ── */
+.why-us{background:var(--cream)}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.feature-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:30px;transition:all .25s}
+.feature-card:hover{border-color:var(--navy);box-shadow:0 8px 32px rgba(18,39,94,0.1);transform:translateY(-3px)}
+.feature-icon{width:52px;height:52px;background:linear-gradient(135deg,var(--navy),#2545a0);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.feature-icon svg{width:24px;height:24px;color:#fff}
+.feature-card h3{font-family:var(--serif);font-size:19px;color:var(--navy);margin-bottom:8px;font-weight:700}
+.feature-card p{color:var(--text-muted);font-size:14px;line-height:1.65}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-img{position:relative}
+.about-img-main{width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,var(--navy) 0%,#2545a0 100%);border-radius:20px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.school-visual{text-align:center;color:rgba(255,255,255,0.8);padding:40px}
+.school-visual .big-icon{font-size:80px;margin-bottom:12px;display:block}
+.school-visual p{font-size:13px;opacity:0.6;letter-spacing:1px;text-transform:uppercase}
+.about-float-card{position:absolute;bottom:-20px;left:-24px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px 20px;box-shadow:0 8px 32px rgba(0,0,0,0.1);display:flex;align-items:center;gap:12px;min-width:180px}
+.float-icon{width:40px;height:40px;background:rgba(140,28,19,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.float-icon svg{width:20px;height:20px;color:var(--maroon)}
+.float-card-text strong{display:block;font-size:18px;font-family:var(--serif);color:var(--navy);font-weight:700}
+.float-card-text span{font-size:12px;color:var(--text-muted)}
+.about-text .section-sub{max-width:100%}
+.value-list{margin-top:28px;display:flex;flex-direction:column;gap:12px}
+.value-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--cream);border-radius:10px;border-left:3px solid var(--gold)}
+.value-item svg{width:18px;height:18px;color:var(--maroon);flex-shrink:0;margin-top:2px}
+.value-item p{font-size:14px;color:var(--text);line-height:1.55}
+.value-item p strong{color:var(--navy)}
+
+/* ── DESK ── */
+.desks{background:var(--cream)}
+.desks-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.desk-card{background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--border);transition:box-shadow .25s}
+.desk-card:hover{box-shadow:0 12px 40px rgba(18,39,94,0.1)}
+.desk-header{background:linear-gradient(135deg,var(--navy),#2040a0);padding:28px;display:flex;align-items:center;gap:16px}
+.desk-avatar{width:72px;height:72px;background:rgba(255,255,255,0.15);border-radius:50%;border:3px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.desk-avatar span{font-family:var(--serif);font-size:28px;color:#fff;font-weight:700}
+.desk-header-text h3{font-family:var(--serif);color:#fff;font-size:19px;font-weight:700}
+.desk-header-text span{color:rgba(255,255,255,0.65);font-size:13px}
+.desk-body{padding:28px}
+.desk-quote{font-family:var(--serif);font-size:36px;color:var(--gold);line-height:0.5;display:block;margin-bottom:8px}
+.desk-body p{color:var(--text-muted);font-size:14px;line-height:1.75;font-style:italic}
+.desk-body a{display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--maroon);font-weight:600;font-size:13.5px;text-decoration:none}
+.desk-body a svg{width:14px;height:14px}
+
+/* ── ACHIEVEMENTS ── */
+.achievers-tabs{display:flex;gap:8px;margin-bottom:36px}
+.tab-btn{padding:8px 20px;border-radius:20px;border:1.5px solid var(--border);background:#fff;font-size:13.5px;font-weight:500;cursor:pointer;transition:all .2s;color:var(--text-muted)}
+.tab-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.achievers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:20px}
+.achiever-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px;text-align:center;transition:all .25s}
+.achiever-card:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(201,153,26,0.15);transform:translateY(-2px)}
+.achiever-rank{display:inline-block;background:var(--gold);color:#0C1C46;width:28px;height:28px;border-radius:50%;font-weight:700;font-size:12px;line-height:28px;margin-bottom:10px}
+.achiever-avatar{width:64px;height:64px;background:linear-gradient(135deg,var(--navy),#4060c0);border-radius:50%;margin:0 auto 10px;display:flex;align-items:center;justify-content:center}
+.achiever-avatar span{font-family:var(--serif);font-size:24px;color:#fff;font-weight:700}
+.achiever-card h4{font-family:var(--serif);font-size:14.5px;color:var(--navy);font-weight:700;margin-bottom:4px}
+.achiever-pct{font-size:22px;font-weight:700;font-family:var(--serif);color:var(--maroon)}
+.achiever-class{font-size:11.5px;color:var(--text-muted);margin-top:2px}
+
+/* ── INFRASTRUCTURE ── */
+.infra{background:var(--navy-deep)}
+.infra .section-title{color:#fff}
+.infra .section-label{color:var(--gold-light)}
+.infra .divider{background:linear-gradient(90deg,var(--gold-light),rgba(255,255,255,0.2))}
+.infra-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.infra-card{border-radius:16px;overflow:hidden;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);cursor:pointer;transition:all .25s;position:relative}
+.infra-card:hover{border-color:rgba(255,255,255,0.2);background:rgba(255,255,255,0.08)}
+.infra-card-img{height:160px;display:flex;align-items:center;justify-content:center;font-size:52px}
+.infra-card-body{padding:16px}
+.infra-card-body h4{font-family:var(--serif);font-size:16px;color:#fff;font-weight:700}
+.infra-card-body p{font-size:12.5px;color:rgba(255,255,255,0.5);margin-top:4px}
+
+/* ── UPDATES ── */
+.updates-grid{display:grid;grid-template-columns:3fr 2fr;gap:40px}
+.update-list{display:flex;flex-direction:column;gap:0}
+.update-item{display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s}
+.update-item:first-child{border-top:1px solid var(--border)}
+.update-item:hover .update-title{color:var(--maroon)}
+.update-date{background:var(--navy);color:#fff;border-radius:8px;padding:6px 10px;text-align:center;min-width:52px;flex-shrink:0}
+.update-date .day{font-family:var(--serif);font-size:20px;font-weight:700;line-height:1;display:block}
+.update-date .month{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:0.7}
+.update-title{font-size:14.5px;font-weight:500;color:var(--text);line-height:1.5;transition:color .2s}
+.update-type{display:inline-block;font-size:11px;padding:2px 8px;border-radius:10px;background:rgba(140,28,19,0.08);color:var(--maroon);font-weight:600;margin-top:4px}
+.update-pdf{display:flex;align-items:center;gap:5px;font-size:12.5px;color:var(--maroon);margin-top:6px;font-weight:500}
+.update-pdf svg{width:13px;height:13px}
+.events-card{background:var(--cream);border-radius:20px;padding:28px}
+.events-card h3{font-family:var(--serif);font-size:20px;color:var(--navy);margin-bottom:20px;font-weight:700}
+.event-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.event-item:last-child{border-bottom:none}
+.event-dot{width:10px;height:10px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:5px}
+.event-item p{font-size:14px;color:var(--text);font-weight:500;line-height:1.4}
+.event-item span{font-size:12px;color:var(--text-muted)}
+
+/* ── TESTIMONIALS ── */
+.testimonials{background:var(--cream)}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.testi-card{background:#fff;border-radius:16px;padding:28px;border:1px solid var(--border);position:relative;overflow:hidden;transition:box-shadow .25s}
+.testi-card:hover{box-shadow:0 8px 32px rgba(18,39,94,0.1)}
+.testi-card::before{content:'"';position:absolute;top:-10px;right:16px;font-family:var(--serif);font-size:120px;color:rgba(18,39,94,0.04);line-height:1}
+.stars{display:flex;gap:3px;margin-bottom:14px}
+.stars span{color:var(--gold);font-size:15px}
+.testi-card blockquote{font-size:14.5px;color:var(--text-muted);line-height:1.7;font-style:italic;margin-bottom:20px;position:relative;z-index:1}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--navy),#4060c0);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.testi-avatar span{color:#fff;font-family:var(--serif);font-size:16px;font-weight:700}
+.testi-name strong{display:block;font-size:14px;font-weight:600;color:var(--text)}
+.testi-name span{font-size:12.5px;color:var(--text-muted)}
+
+/* ── BUS + LOCATION ── */
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.map-embed{background:linear-gradient(135deg,#e8f0fe,#d2e3fc);border-radius:16px;overflow:hidden;height:320px;border:1px solid var(--border);position:relative;display:flex;align-items:center;justify-content:center}
+.map-placeholder{text-align:center;color:var(--navy)}
+.map-placeholder svg{width:48px;height:48px;color:var(--navy);opacity:0.3;margin-bottom:12px}
+.map-placeholder p{font-size:14px;color:var(--text-muted)}
+.map-placeholder a{display:inline-flex;align-items:center;gap:6px;margin-top:12px;background:var(--navy);color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;transition:background .2s}
+.map-placeholder a:hover{background:var(--navy-deep)}
+.contact-details{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.contact-item{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-muted)}
+.contact-item svg{width:16px;height:16px;color:var(--navy);flex-shrink:0}
+.bus-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13.5px}
+.bus-table th{background:var(--navy);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:12.5px;letter-spacing:0.3px}
+.bus-table th:first-child{border-radius:8px 0 0 0}
+.bus-table th:last-child{border-radius:0 8px 0 0}
+.bus-table td{padding:9px 14px;border-bottom:1px solid var(--border);color:var(--text)}
+.bus-table tr:hover td{background:var(--cream)}
+.bus-note{font-size:12.5px;color:var(--text-muted);margin-top:10px;font-style:italic}
+
+/* ── CTA BANNER ── */
+.cta-banner{background:linear-gradient(135deg,var(--maroon) 0%,#6b1210 100%);padding:72px 0;text-align:center;position:relative;overflow:hidden}
+.cta-banner::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(255,255,255,0.02) 20px,rgba(255,255,255,0.02) 21px)}
+.cta-banner h2{font-family:var(--serif);font-size:clamp(28px,4vw,44px);color:#fff;margin-bottom:12px;font-weight:700;position:relative}
+.cta-banner p{color:rgba(255,255,255,0.75);font-size:16px;max-width:480px;margin:0 auto 32px;position:relative}
+.cta-banner-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative}
+.btn-white{background:#fff;color:var(--maroon);padding:13px 28px;border-radius:8px;font-weight:700;font-size:14.5px;text-decoration:none;transition:all .2s}
+.btn-white:hover{background:var(--cream);transform:translateY(-1px)}
+.btn-outline-white{background:transparent;color:#fff;padding:13px 28px;border-radius:8px;font-weight:500;font-size:14.5px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.4);transition:all .2s}
+.btn-outline-white:hover{border-color:#fff;background:rgba(255,255,255,0.08)}
+
+/* ── FOOTER ── */
+footer{background:var(--navy-deep);color:rgba(255,255,255,0.75);padding:56px 0 28px}
+.footer-inner{max-width:1200px;margin:auto;padding:0 24px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand p{font-size:13.5px;line-height:1.7;margin-top:14px;opacity:0.6;max-width:280px}
+.footer-col h4{color:#fff;font-family:var(--serif);font-size:16px;font-weight:700;margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.footer-col ul a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:13.5px;transition:color .2s}
+.footer-col ul a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:12.5px;opacity:0.45;flex-wrap:wrap;gap:8px}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.footer-logo-badge{width:40px;height:40px;background:rgba(255,255,255,0.08);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.footer-logo-badge span{font-family:var(--serif);font-size:15px;color:#fff;font-weight:700}
+.footer-logo strong{color:#fff;font-family:var(--serif);font-size:15px}
+.affil-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,153,26,0.15);border:1px solid rgba(201,153,26,0.25);color:var(--gold-light);padding:5px 12px;border-radius:6px;font-size:11.5px;margin-top:10px;font-weight:500}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .topbar-left span{display:none}
+  .nav-links{display:none}
+  .hero-inner{grid-template-columns:1fr;gap:36px;padding:60px 24px}
+  .hero-card{display:grid;grid-template-columns:1fr 1fr}
+  .about-grid,.desks-grid,.updates-grid,.location-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .about-float-card{display:none}
+}
+
+/* ── SCROLL ANIMATIONS ── */
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.fade-up:nth-child(2){transition-delay:.1s}
+.fade-up:nth-child(3){transition-delay:.2s}
+.fade-up:nth-child(4){transition-delay:.3s}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <a href="tel:+919304002945">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 15.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        +91 93040 02945
+      </a>
+      <a href="mailto:rdpublicschool04@gmail.com">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        rdpublicschool04@gmail.com
+      </a>
+    </div>
+    <div class="topbar-right">
+      <span style="color:rgba(255,255,255,0.4);font-size:11px">CBSE Affil. No. 330408</span>
+      <a href="#admissions" class="topbar-cta">Admissions Open 2025–26</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-badge"><img src="public/rdpslogo.webp" alt="RD Public School Logo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+      <div class="logo-text">
+        <strong>RD Public School</strong>
+        <small>Tekari, Gaya · Bihar</small>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#academics">Academics</a></li>
+      <li><a href="#admissions">Admissions</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#updates">Updates</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#admissions" class="nav-btn">Apply Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-accent2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span></span> CBSE Affiliated School · Tekari, Gaya</div>
+      <h1>Shaping <em>Future Leaders</em> of Bihar Since 1995</h1>
+      <p class="hero-sub">Holistic education that develops the mind, body, and character. Modern infrastructure. Experienced faculty. A legacy of excellence in Gaya district.</p>
+      <div class="hero-btns">
+        <a href="#admissions" class="btn-primary">Apply for Admission</a>
+        <a href="#about" class="btn-ghost">Explore School</a>
+      </div>
+      <div class="cbse-badge">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        Affiliated to CBSE, New Delhi · Affiliation No. 330408
+      </div>
+    </div>
+    <div>
+      <div class="hero-card">
+        <div class="hero-stat">
+          <div class="hero-stat-num">30<span>+</span></div>
+          <div class="hero-stat-label">Years of Excellence</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">1200<span>+</span></div>
+          <div class="hero-stat-label">Students Enrolled</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">60<span>+</span></div>
+          <div class="hero-stat-label">Qualified Faculty</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">98<span>%</span></div>
+          <div class="hero-stat-label">Board Pass Rate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us" id="about">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-title">Education That Goes <em>Beyond Textbooks</em></h2>
+      <p class="section-sub">We nurture every student's potential through modern teaching methods, experienced educators, and a safe, inspiring environment.</p>
+      <div class="divider center"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-up">
+        <div class="feature-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <h3>Modern Technology</h3>
+        <p>Smart classrooms, computer labs with internet access, and digital learning tools that prepare students for the 21st century.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+        </div>
+        <h3>Experienced Faculty</h3>
+        <p>Qualified, dedicated teachers with deep subject expertise and a genuine passion for nurturing young minds to reach their full potential.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+        </div>
+        <h3>Sports & Activities</h3>
+        <p>Cricket, kabaddi, athletics, and cultural events — we believe physical and creative development is as important as academic excellence.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3>Safe Environment</h3>
+        <p>A secure, disciplined campus where every child feels safe, respected, and motivated to learn. Parents' trust is our greatest responsibility.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SCHOOL -->
+<section style="background:#fff;padding:80px 0">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img">
+        <div class="about-img-main">
+          <img src="public/rdps2.webp" alt="RD Public School Campus" style="width:100%;height:100%;object-fit:cover;">
+        </img>
+        <div class="about-float-card">
+          <div class="float-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <div class="float-card-text">
+            <strong>Est. 1995</strong>
+            <span>30 years in Tekari</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-label">About Our School</div>
+        <h2 class="section-title">A Trusted Name in <em>Tekari</em> for Three Decades</h2>
+        <div class="divider"></div>
+        <p class="section-sub">RD Public School has been the pillar of quality education in Tekari, Gaya since 1995. Affiliated to CBSE, we follow a curriculum that balances academic rigor with holistic development — preparing students not just for board exams, but for life.</p>
+        <div class="value-list">
+          <div class="value-item">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <p><strong>CBSE Curriculum</strong> — Classes Nursery to XII with Science, Commerce & Arts streams</p>
+          </div>
+          <div class="value-item">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <p><strong>Mental, Physical & Spiritual</strong> development — complete education for the modern world</p>
+          </div>
+          <div class="value-item">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <p><strong>Affordable quality education</strong> — the best schooling in Tekari at accessible fees</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTOR + PRINCIPAL -->
+<section class="desks" id="desk">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-label">Leadership</div>
+      <h2 class="section-title">Words From Our <em>Leaders</em></h2>
+      <div class="divider center"></div>
+    </div>
+    <div class="desks-grid">
+      <div class="desk-card">
+        <div class="desk-header">
+          <div class="desk-avatar"><span>D</span></div>
+          <div class="desk-header-text">
+            <h3>Director's Message</h3>
+            <span>Founder & Director, RD Public School</span>
+          </div>
+        </div>
+        <div class="desk-body">
+          <span class="desk-quote">"</span>
+          <p>Our school was founded on a simple belief — that every child in Tekari deserves access to quality education that can transform their life. For three decades, we have worked tirelessly to create an environment where learning is joyful, values are strong, and every student is seen, heard, and encouraged to reach their highest potential.</p>
+          <a href="#about">Read Full Message <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        </div>
+      </div>
+      <div class="desk-card">
+        <div class="desk-header" style="background:linear-gradient(135deg,var(--maroon),#a82418)">
+          <div class="desk-avatar"><span>P</span></div>
+          <div class="desk-header-text">
+            <h3>Principal's Message</h3>
+            <span>Principal, RD Public School</span>
+          </div>
+        </div>
+        <div class="desk-body">
+          <span class="desk-quote">"</span>
+          <p>Education is not merely the filling of a pail, but the lighting of a fire. At RD Public School, we strive to ignite that curiosity in every child. Our dedicated faculty, structured curriculum, and focus on both academics and character ensure that our students graduate not just with marks, but with the wisdom and confidence to succeed.</p>
+          <a href="#about">Read Full Message <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOP ACHIEVERS -->
+<section style="background:#fff;padding:80px 0" id="achievements">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-label">Academic Excellence</div>
+      <h2 class="section-title">Our <em>Top Achievers</em> — Board Results 2023–24</h2>
+      <p class="section-sub">Congratulations to our outstanding students who made RD Public School proud in the CBSE board examinations.</p>
+      <div class="divider center"></div>
+    </div>
+    <div class="achievers-tabs">
+      <button class="tab-btn active" onclick="switchTab(this,'x')">Class X Toppers</button>
+      <button class="tab-btn" onclick="switchTab(this,'xii')">Class XII Toppers</button>
+    </div>
+    <div class="achievers-grid" id="tab-x">
+      <div class="achiever-card fade-up">
+        <div class="achiever-rank">1</div>
+        <div class="achiever-avatar"><span>A</span></div>
+        <h4>Amit Kumar</h4>
+        <div class="achiever-pct">95.8%</div>
+        <div class="achiever-class">Class X · 2024</div>
+      </div>
+      <div class="achiever-card fade-up">
+        <div class="achiever-rank">2</div>
+        <div class="achiever-avatar"><span>P</span></div>
+        <h4>Priya Singh</h4>
+        <div class="achiever-pct">94.6%</div>
+        <div class="achiever-class">Class X · 2024</div>
+      </div>
+      <div class="achiever-card fade-up">
+        <div class="achiever-rank">3</div>
+        <div class="achiever-avatar"><span>R</span></div>
+        <h4>Rahul Prasad</h4>
+        <div class="achiever-pct">93.2%</div>
+        <div class="achiever-class">Class X · 2024</div>
+      </div>
+      <div class="achiever-card fade-up">
+        <div class="achiever-rank" style="background:var(--navy)">4</div>
+        <div class="achiever-avatar"><span>S</span></div>
+        <h4>Sunita Kumari</h4>
+        <div class="achiever-pct">92.4%</div>
+        <div class="achiever-class">Class X · 2024</div>
+      </div>
+      <div class="achiever-card fade-up">
+        <div class="achiever-rank" style="background:var(--navy)">5</div>
+        <div class="achiever-avatar"><span>V</span></div>
+        <h4>Vivek Sharma</h4>
+        <div class="achiever-pct">91.8%</div>
+        <div class="achiever-class">Class X · 2024</div>
+      </div>
+    </div>
+    <div class="achievers-grid" id="tab-xii" style="display:none">
+      <div class="achiever-card">
+        <div class="achiever-rank">1</div>
+        <div class="achiever-avatar" style="background:linear-gradient(135deg,var(--maroon),#c0392b)"><span>N</span></div>
+        <h4>Neha Gupta</h4>
+        <div class="achiever-pct">96.2%</div>
+        <div class="achiever-class">Science · 2024</div>
+      </div>
+      <div class="achiever-card">
+        <div class="achiever-rank">2</div>
+        <div class="achiever-avatar" style="background:linear-gradient(135deg,var(--maroon),#c0392b)"><span>A</span></div>
+        <h4>Arjun Tiwari</h4>
+        <div class="achiever-pct">94.0%</div>
+        <div class="achiever-class">Commerce · 2024</div>
+      </div>
+      <div class="achiever-card">
+        <div class="achiever-rank">3</div>
+        <div class="achiever-avatar" style="background:linear-gradient(135deg,var(--maroon),#c0392b)"><span>K</span></div>
+        <h4>Kavita Rani</h4>
+        <div class="achiever-pct">93.6%</div>
+        <div class="achiever-class">Arts · 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFRASTRUCTURE -->
+<section class="infra" id="gallery">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Campus & Facilities</div>
+      <h2 class="section-title">Our <em>Infrastructure</em></h2>
+      <p style="color:rgba(255,255,255,0.55);max-width:480px;margin-top:12px;font-size:15.5px;line-height:1.7">Modern facilities built to inspire learning and foster all-round development in every student.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="infra-grid">
+      <div class="infra-card fade-up">
+        <div class="infra-card-img" style="background:rgba(18,39,94,0.4)"><img src="public/sciencelab.png" alt="Science Lab" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="infra-card-body"><h4>Science Labs</h4><p>Physics, Chemistry & Biology</p></div>
+      </div>
+      <div class="infra-card fade-up">
+        <div class="infra-card-img" style="background:rgba(140,28,19,0.3)"><img src="public/computerlab.jpg" alt="Computer Lab" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="infra-card-body"><h4>Computer Lab</h4><p>30+ systems with internet</p></div>
+      </div>
+      <div class="infra-card fade-up">
+        <div class="infra-card-img" style="background:rgba(18,39,94,0.4)"><img src="public/library.jpg" alt="Library" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="infra-card-body"><h4>Library</h4><p>3000+ books & references</p></div>
+      </div>
+      <div class="infra-card fade-up">
+        <div class="infra-card-img" style="background:rgba(140,28,19,0.3)"><img src="public/ground.jpg" alt="Sports Ground" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="infra-card-body"><h4>Sports Ground</h4><p>Cricket, Kabaddi, Athletics</p></div>
+      </div>
+      <div class="infra-card fade-up">
+        <div class="infra-card-img" style="background:rgba(18,39,94,0.4)"><img src="public/activityhall.jpg" alt="Activity Hall" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="infra-card-body"><h4>Activity Hall</h4><p>Events, assemblies, cultural</p></div>
+      </div>
+      <div class="infra-card fade-up">
+        <div class="infra-card-img" style="background:rgba(140,28,19,0.3)"><img src="public/schoolbus.avif" alt="School Bus" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="infra-card-body"><h4>School Bus</h4><p>6 routes across Tekari & Gaya</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPORTANT UPDATES -->
+<section style="background:#fff;padding:80px 0" id="updates">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">School Notices</div>
+      <h2 class="section-title">Important <em>Updates</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="updates-grid">
+      <div>
+        <div class="update-list">
+          <div class="update-item">
+            <div class="update-date"><span class="day">20</span><span class="month">Mar</span></div>
+            <div>
+              <div class="update-title">PTM Circular — Classes I to V (Session 2025–26)</div>
+              <span class="update-type">Circular</span>
+              <div class="update-pdf"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Download PDF</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="update-date"><span class="day">15</span><span class="month">Mar</span></div>
+            <div>
+              <div class="update-title">Annual Examination Datesheet — Classes VI to VIII</div>
+              <span class="update-type">Exam</span>
+              <div class="update-pdf"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Download PDF</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="update-date"><span class="day">10</span><span class="month">Mar</span></div>
+            <div>
+              <div class="update-title">School Re-opens After Summer Break — New Session Begins April 1</div>
+              <span class="update-type">Notice</span>
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="update-date"><span class="day">02</span><span class="month">Mar</span></div>
+            <div>
+              <div class="update-title">Admission Notice 2025–26 — Classes Nursery to IX Open</div>
+              <span class="update-type">Admissions</span>
+              <div class="update-pdf"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Download PDF</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="update-date"><span class="day">24</span><span class="month">Feb</span></div>
+            <div>
+              <div class="update-title">Republic Day Celebration — Chief Guest Address & Prize Distribution</div>
+              <span class="update-type">Event</span>
+            </div>
+          </div>
+        </div>
+        <a href="#" style="display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--maroon);font-weight:600;font-size:14px;text-decoration:none">
+          View All Updates
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+      <div class="events-card">
+        <h3>Upcoming Events</h3>
+        <div class="event-item">
+          <div class="event-dot"></div>
+          <div>
+            <p>Annual Sports Day</p>
+            <span>April 12, 2025</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-dot" style="background:var(--maroon)"></div>
+          <div>
+            <p>Class X & XII Board Exams Begin</p>
+            <span>February 15, 2025</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-dot"></div>
+          <div>
+            <p>Parent-Teacher Meeting</p>
+            <span>March 22, 2025</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-dot" style="background:var(--navy)"></div>
+          <div>
+            <p>Republic Day Celebration</p>
+            <span>January 26, 2025</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-dot"></div>
+          <div>
+            <p>Annual Prize Distribution Ceremony</p>
+            <span>April 28, 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-label">What Parents Say</div>
+      <h2 class="section-title">Trusted by <em>Families</em> Across Tekari & Gaya</h2>
+      <div class="divider center"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card fade-up">
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>"My son has studied here since Class I. The teachers genuinely care about each child's progress. The discipline and values they teach here are something we see at home too. Very proud to be part of the RD Public School family."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar"><span>R</span></div>
+          <div class="testi-name"><strong>Ramesh Kumar Singh</strong><span>Parent · Class VII</span></div>
+        </div>
+      </div>
+      <div class="testi-card fade-up">
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>"My daughter scored 94% in her Class X boards. The science and maths teachers here are exceptional — they explain concepts so clearly. We had other schools as options but RD Public School was clearly the best choice in Tekari."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar"><span>S</span></div>
+          <div class="testi-name"><strong>Sangeeta Devi</strong><span>Parent · Class XI (Science)</span></div>
+        </div>
+      </div>
+      <div class="testi-card fade-up">
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>"The bus service is very reliable and the drivers are responsible. As a working parent this gives me complete peace of mind. The school communicates promptly about any schedule changes. Highly recommend to all families in Gaya district."</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar"><span>M</span></div>
+          <div class="testi-name"><strong>Manoj Prasad</strong><span>Parent · Classes III & VI</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSIONS -->
+<section style="background:#fff;padding:80px 0" id="admissions">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-label">Admissions 2025–26</div>
+      <h2 class="section-title">How to <em>Enroll</em> Your Child</h2>
+      <p class="section-sub">Simple 3-step process. Admissions are currently open for Nursery to Class IX.</p>
+      <div class="divider center"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px">
+      <div style="text-align:center;padding:32px 24px;background:var(--cream);border-radius:16px;border:1px solid var(--border)">
+        <div style="width:52px;height:52px;background:var(--navy);border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--serif);font-size:22px;font-weight:700">1</div>
+        <h3 style="font-family:var(--serif);color:var(--navy);margin-bottom:8px">Enquiry</h3>
+        <p style="color:var(--text-muted);font-size:14px;line-height:1.65">Call us or fill the form below. Our team will share details about the admission process and available seats.</p>
+      </div>
+      <div style="text-align:center;padding:32px 24px;background:var(--cream);border-radius:16px;border:1px solid var(--border)">
+        <div style="width:52px;height:52px;background:var(--maroon);border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--serif);font-size:22px;font-weight:700">2</div>
+        <h3 style="font-family:var(--serif);color:var(--navy);margin-bottom:8px">Visit & Test</h3>
+        <p style="color:var(--text-muted);font-size:14px;line-height:1.65">Visit the school with your child. A simple interaction/test is conducted for Classes III and above.</p>
+      </div>
+      <div style="text-align:center;padding:32px 24px;background:var(--cream);border-radius:16px;border:1px solid var(--border)">
+        <div style="width:52px;height:52px;background:var(--gold);border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;color:var(--navy-deep);font-family:var(--serif);font-size:22px;font-weight:700">3</div>
+        <h3 style="font-family:var(--serif);color:var(--navy);margin-bottom:8px">Confirm</h3>
+        <p style="color:var(--text-muted);font-size:14px;line-height:1.65">Submit required documents and pay the admission fee. Your child's journey at RD Public School begins!</p>
+      </div>
+    </div>
+    <!-- Enquiry Form -->
+    <div style="background:var(--navy-deep);border-radius:20px;padding:40px;max-width:720px;margin:0 auto">
+      <h3 style="font-family:var(--serif);color:#fff;font-size:24px;margin-bottom:6px;font-weight:700">Admission Enquiry</h3>
+      <p style="color:rgba(255,255,255,0.55);font-size:14px;margin-bottom:28px">Fill this form and we'll contact you within 24 hours.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <label style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500">Parent / Guardian Name</label>
+          <input type="text" placeholder="Your full name" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:11px 14px;color:#fff;font-size:14px;outline:none;font-family:var(--sans)" onfocus="this.style.borderColor='rgba(201,153,26,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'"/>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <label style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500">Mobile Number</label>
+          <input type="tel" placeholder="+91 XXXXX XXXXX" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:11px 14px;color:#fff;font-size:14px;outline:none;font-family:var(--sans)" onfocus="this.style.borderColor='rgba(201,153,26,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'"/>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <label style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500">Child's Name</label>
+          <input type="text" placeholder="Student's full name" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:11px 14px;color:#fff;font-size:14px;outline:none;font-family:var(--sans)" onfocus="this.style.borderColor='rgba(201,153,26,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'"/>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <label style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500">Applying for Class</label>
+          <select style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:11px 14px;color:rgba(255,255,255,0.8);font-size:14px;outline:none;font-family:var(--sans);cursor:pointer">
+            <option value="" style="background:#1a2744">Select Class</option>
+            <option style="background:#1a2744">Nursery / KG</option>
+            <option style="background:#1a2744">Class I</option>
+            <option style="background:#1a2744">Class II</option>
+            <option style="background:#1a2744">Class III</option>
+            <option style="background:#1a2744">Class IV–V</option>
+            <option style="background:#1a2744">Class VI–VIII</option>
+            <option style="background:#1a2744">Class IX</option>
+          </select>
+        </div>
+      </div>
+      <button style="margin-top:20px;background:var(--gold);color:var(--navy-deep);padding:13px 28px;border-radius:8px;font-weight:700;font-size:14.5px;border:none;cursor:pointer;font-family:var(--sans);transition:background .2s;width:100%" onmouseover="this.style.background='#d4a820'" onmouseout="this.style.background='var(--gold)'">Submit Enquiry</button>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION + BUS SERVICE -->
+<section style="background:var(--cream);padding:80px 0" id="contact">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Find Us</div>
+      <h2 class="section-title">Location & <em>Bus Service</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="location-grid">
+      <div>
+        <div class="map-embed">
+          <div class="map-placeholder">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <p style="font-weight:600;color:var(--navy);font-size:16px">Vikram Vihar, Tekari</p>
+            <p>Gaya, Bihar — 824236</p>
+            <a href="https://maps.google.com?q=Tekari+Gaya+Bihar" target="_blank">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              Open in Google Maps
+            </a>
+          </div>
+        </div>
+        <div class="contact-details">
+          <div class="contact-item">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Vikram Vihar, Tekari, Gaya, Bihar — 824236
+          </div>
+          <div class="contact-item">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 15.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            +91 93040 02945 &nbsp;|&nbsp; +91 93340 60440
+          </div>
+          <div class="contact-item">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            rdpublicschool04@gmail.com
+          </div>
+          <div class="contact-item">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Mon–Sat &nbsp; 7:30 AM – 2:30 PM
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:var(--serif);color:var(--navy);font-size:20px;margin-bottom:16px;font-weight:700">School Bus Routes</h3>
+        <table class="bus-table">
+          <thead>
+            <tr><th>Route</th><th>Area Covered</th><th>Pickup Time</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Route 1</td><td>Tekari Main Road</td><td>7:10 AM</td></tr>
+            <tr><td>Route 2</td><td>Gaya Road, Bypass</td><td>6:55 AM</td></tr>
+            <tr><td>Route 3</td><td>Nagar Panchayat Area</td><td>7:05 AM</td></tr>
+            <tr><td>Route 4</td><td>Colony Road & Market</td><td>7:15 AM</td></tr>
+            <tr><td>Route 5</td><td>Sherghati Road</td><td>6:45 AM</td></tr>
+            <tr><td>Route 6</td><td>Daudnagar Area</td><td>6:40 AM</td></tr>
+          </tbody>
+        </table>
+        <p class="bus-note">* All buses return after school at 2:45 PM. For bus fee and detailed stops, contact the school office.</p>
+        <div style="margin-top:20px;padding:16px;background:#fff;border-radius:12px;border:1px solid var(--border)">
+          <p style="font-size:13.5px;color:var(--text-muted);line-height:1.6">📞 For bus enquiries, contact the transport office directly at <strong style="color:var(--navy)">+91 93340 60440</strong> between 9 AM – 1 PM on school days.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="section-inner">
+    <h2>Admissions Open for 2025–26</h2>
+    <p>Give your child the best start in life. Limited seats available — apply today before they fill up.</p>
+    <div class="cta-banner-btns">
+      <a href="#admissions" class="btn-white">Apply Now</a>
+      <a href="tel:+919304002945" class="btn-white">Call: +91 93040 02945</a>
+      <a href="tel:+919334060440" class="btn-white">Whatsapp</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-badge"><span>RD</span></div>
+          <strong>RD Public School</strong>
+        </div>
+        <p>Providing quality CBSE education to the children of Tekari, Gaya since 1995. Developing future leaders of Bihar through academics, sports, and strong values.</p>
+        <div class="affil-badge">✓ CBSE Affiliated · No. 330408</div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#updates">Updates</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Academics</h4>
+        <ul>
+          <li><a href="#">CBSE Curriculum</a></li>
+          <li><a href="#">Fee Structure</a></li>
+          <li><a href="#">Academic Calendar</a></li>
+          <li><a href="#">School Timings</a></li>
+          <li><a href="#">Rules & Discipline</a></li>
+          <li><a href="#">TC Corner</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">Vikram Vihar, Tekari</a></li>
+          <li><a href="#">Gaya, Bihar 824236</a></li>
+          <li><a href="tel:+919304002945">+91 93040 02945</a></li>
+          <li><a href="tel:+919334060440">+91 93340 60440</a></li>
+          <li><a href="tel:+919334060440">Whatsapp</a></li>
+          <li><a href="mailto:rdpublicschool04@gmail.com">rdpublicschool04@gmail.com</a></li>
+          <li><a href="https://cbse.gov.in" target="_blank">CBSE Website →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 RD Public School, Tekari, Gaya, Bihar. All rights reserved.</span>
+      <span>Designed with ❤️ for the children of Tekari</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Achievers tabs
+function switchTab(btn, tab) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-x').style.display = tab === 'x' ? 'grid' : 'none';
+  document.getElementById('tab-xii').style.display = tab === 'xii' ? 'grid' : 'none';
+}
+</script>
+</body>
+</html>
